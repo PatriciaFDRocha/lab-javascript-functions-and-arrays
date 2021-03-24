@@ -1,15 +1,67 @@
 // Iteration #1: Find the maximum
+function maxOfTwoNumbers (num1, num2){
+  if(num1 > num2){
+    return num1;
+
+  } else {
+    return num2;
+  }
+}
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+
+function findLongestWord(wordArray){
+  if (wordArray.length === 0){
+    return null;
+  }
+
+  let longestWord = wordArray[0];
+  for (let i=0; i < wordArray.length; i++) {
+    if (wordArray[i].length > longestWord.length) {
+      longestWord = wordArray[i];
+    }
+  }
+  return longestWord;
+}
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumNumbers(numArray){
+
+  let result = 0;
+  for(i=0; i<numArray.length; i++){
+    result += numArray[i];
+    //result = result + numArray[i];
+  }
+  return result;
+}
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9]; two2 = [1, 2];
+
+function averageNumbers(arrayOfNumbers){
+
+  sumNumbers(arrayOfNumbers); //not working - NaN?
+
+  if(arrayOfNumbers.length === 0){ //works
+    return null;
+}
+  else if(arrayOfNumbers.length === 1){ //appearing as [ 1 ] - why appearing as string?
+    return arrayOfNumbers;
+  }
+  else { 
+    let average = 0;
+    average = sumNumbers/arrayOfNumbers.length; //NaN - ?sumNumbers not working
+    return average;
+  }
+}
+//console.log(averageNumbers(numbersAvg));
+//console.log(averageNumbers(two2));
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
